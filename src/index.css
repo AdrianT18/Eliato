@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Styles for the product page and images */
+.product-page {
+  max-width: 1200px;
+}
+
+.image-gallery {
+  width: 100px;
+}
+
+.thumbnail {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.main-image img {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+}
+
+.section button {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.cart {
+  z-index: 1000;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.main-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #708349;
+}
+
+.main-page .container {
+  max-width: 1200px;
+}
+
+.main-page img {
+  max-width: 100%;
+  height: auto;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.awards-slider .animate-scroll {
+  display: flex;
+  animation: scroll 30s linear infinite;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.bg-leaves2 {
+  background-image: url("/leaves.png"); /* Ensure the path is correct */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Add this to your styles.css or a similar file */
+.max-h-0 {
+  max-height: 0;
+  overflow: hidden;
+}
+.max-h-full {
+  max-height: 1000px; /* Adjust this value as needed */
+  overflow: hidden;
+}
+
+/* Optional: Custom scrollbar styling */
+.image-gallery::-webkit-scrollbar {
+  height: 8px;
+}
+
+.image-gallery::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+}
+
+/* Ensure the main image covers as much space as possible */
+.image-section .main-image img {
+  width: 100%;
+  height: auto;
+  max-height: 80vh; /* Adjust this value as needed */
+  object-fit: cover;
+}
+
+.image-gallery {
+  flex: 0 0 auto; /* Prevent shrinking */
+}
+
+.image-section {
+  align-items: flex-start; /* Align items to the start */
+}
+
+@media (max-width: 767px) {
+  .image-gallery {
+    flex-direction: row; /* Thumbnails in a row */
+    width: 100%; /* Full width */
+    gap: 0.5rem; /* Adjust gap as needed */
+  }
+
+  .thumbnail {
+    width: 80px;
+    height: 80px;
+  }
+
+  .main-image {
+    flex-grow: 1;
+  }
+}
+
+/* Custom Styles for Header */
+.header-link {
+  padding: 8px 16px;
+  transition: color 0.3s;
+}
+
+.header-link:hover {
+  color: #d1d5db; /* Tailwind's gray-400 color */
+}
+
+.header-button {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  transition: color 0.3s;
+}
+
+.header-button:hover {
+  color: #d1d5db; /* Tailwind's gray-400 color */
+}
+
+.mobile-menu {
+  position: fixed; /* Ensure it's fixed to cover the screen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #708349; /* Ensure the same background color as the header */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transform: translateX(-100%); /* Initial position off-screen */
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.mobile-menu.translate-x-0 {
+  transform: translateX(0); /* Move to visible position */
+}
+
+.mobile-menu a,
+.mobile-menu button {
+  padding: 8px 0;
+  transition: color 0.3s;
+}
+
+.mobile-menu a:hover,
+.mobile-menu button:hover {
+  color: #d1d5db; /* Tailwind's gray-400 color */
+}
+
+.mobile-menu-close-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}

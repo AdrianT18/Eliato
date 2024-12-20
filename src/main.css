@@ -1,0 +1,14 @@
+/* Define the background styles for larger screens */
+.bg-image-custom {
+    background-image: url('./assets/img.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left; /* Left-aligned on larger screens */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .bg-image-custom {
+        background-position: center; /* Centered on mobile screens */
+    }
+}
